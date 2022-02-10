@@ -1,0 +1,11 @@
+.gridLayout{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.checked{
+    background-color: red;
+}

@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --navbar-bg: #313232;
+    --red-alert : #FC4F4F;
+
+}
+
+nav span{
+    color:white;
+    font-weight: bold;
+    transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+nav{
+    display:flex;
+    background-color: var(--navbar-bg);
+    align-items: center;
+    gap:1rem;
+    padding:1rem 10vw ;
+    margin-bottom: 10vh;
+
+    
+}
+
+
+form{
+    display:flex;
+    align-items: center;
+    gap:1rem;
+}
+
+input{
+    height:25px;
+    width:25vw;
+    border:none;
+
+}
+
+nav button{
+    background-color: transparent;
+    border: none;
+}
+
+.inputField{
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.cart{
+    margin-left:auto;
+}
+
+.deleteInput{
+    position:relative;
+    right: 80px;
+    color:var(--navbar-bg);
+    transition: all .3s ease-out;
+}
+
+.deleteInput:hover{
+    color: var(--red-alert)
+}
+
+
+
+.search{
+    height:25px;
+}
+
+img{
+    width:30px;
+    height: 30px;
+}
+button:hover{
+    cursor:pointer
+}
