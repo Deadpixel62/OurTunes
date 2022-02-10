@@ -55,20 +55,23 @@ function Checkout() {
           </ul>
           Total price: {totalPrice}$<p>Number of items :{cart.length}</p>
           <form
+            style={{ display: "flex", flexDirection: "column", gap: "2vh" }}
             onSubmit={(e) => {
               e.preventDefault();
-              console.log("Checkout confirmed")
+              console.log("Checkout confirmed");
+              dispatch(Checkout())
             }}
           >
             <input
+              className="formInput"
               type="text"
               onChange={(e) => dispatch(setName(e.target.value))}
               placeholder="Name"
             />
-            <input type="text" placeholder="Address" />
-            <button type="submit"> Confirm checkout </button>
+            
+            <input className="formInput" type="text" placeholder="Address" />
+            <button  className="formBtn" type="submit"> Confirm checkout </button>
           </form>
-          <button onClick={() => dispatch(CheckoutSet())}>Checkout</button>
         </div>
       ) : (
         <p>Your Cart is empty..</p>

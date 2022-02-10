@@ -40,3 +40,18 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.formInput{
+  border:1px solid gray;
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.formBtn{
+  padding: 16px;
+  background-color:#282c34;
+  border-radius: 16px;
+  border:none;
+  color:white;
+  font-size: 18px;
+}
