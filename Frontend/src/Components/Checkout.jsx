@@ -41,16 +41,18 @@ function Checkout() {
                       display: "flex",
                       gap: "15px",
                       alignItems: "center",
+                      width:"30vw",
+                      marginLeft:"15vw"
                     }}
                   >
                     <img
                       style={{ width: "50px", height: "50px" }}
                       src={item.artworkUrl100}
                     />
-                    <span>{item.name} -</span>
+                    <span>{item.name}</span>
                   </span>
-                  - {item.artistName}
-                  {item.price}DZD
+                  <span style={{ width: "15vw" , marginRight:"10vw"}}>{item.artistName}</span>
+                  <span>{item.price} DZD</span>
                 </li>
               );
             })}

@@ -72,6 +72,7 @@ function Navbar() {
         onOk={() => {
           setVisible(false);
           navigate("/Checkout");
+          dispatch(setInputValue(""));
         }}
         onCancel={() => setVisible(false)}
         width={1000}
@@ -99,21 +100,22 @@ function Navbar() {
                     display: "flex",
                     gap: "15px",
                     alignItems: "center",
+                    width: "30vw",
                   }}
                 >
                   <img
                     style={{ width: "50px", height: "50px" }}
                     src={item.artworkUrl100}
                   />
-                  <span>{item.name} -</span>
+                  <span>{item.name}</span>
                 </span>
-                - {item.artistName}
-                {item.price}DZD
+                <span  style={{ width: "15vw" }}>{item.artistName}</span>
+                <span>{item.price} DZD</span>
               </li>
             );
           })}
         </ul>
-        <p style={{ marginLeft: "800px" }}>Total price: {totalPrice}DZD</p>
+        <p style={{ marginLeft: "800px" }}>Total price: {totalPrice} DZD</p>
       </Modal>
     </>
   );
