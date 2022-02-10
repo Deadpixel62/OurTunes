@@ -12,7 +12,8 @@ function Navbar() {
   
   const inputValue = useSelector((state) => state.inputValue);
   const cartNum = useSelector((state) => state.cart.length);
-  const cart= useSelector((state)=> state.cart)
+  const cart= useSelector((state)=> state.cart);
+  const totalPrice = useSelector((state) => state.price)
   const [visible, setVisible] = useState(false);
   const dispatch = useDispatch();
  
@@ -95,10 +96,12 @@ function Navbar() {
                       <span>{item.name} -</span>  
                     </span>
                      - {item.artistName}
+                     {item.price}DZD
                   </li>
                 );
               })}
             </ul>
+            <p style={{marginLeft:"800px"}}>Total price: {totalPrice}DZD</p>
       </Modal>
     </>
   );

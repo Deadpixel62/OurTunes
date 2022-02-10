@@ -19,3 +19,16 @@ export const AddToCart = (item) => {
     payload: item,
   };
 };
+
+export const CheckoutSet = () => {
+  return {
+    type: "CheckoutSet",
+  };
+};
+
+export const setName = (input) => {
+    return {
+        type: "setName",
+        payload: input
+    }
+}

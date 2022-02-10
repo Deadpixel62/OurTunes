@@ -26,8 +26,18 @@ const dispatch = useDispatch();
        let mounted = true;
        if (mounted) {
          axios
-           .get("https://rss.applemarketingtools.com/api/v2/fr/music/most-played/25/songs.json")
-           .then((res)=> dispatch(setMusicList(res.data.feed.results)))
+           .get(
+             "https://rss.applemarketingtools.com/api/v2/fr/music/most-played/25/songs.json"
+           )
+           .then((res) =>
+             dispatch(
+               setMusicList(
+                 res.data.feed.results.map((object) => {
+                   return { ...object, price: 120 };
+                 })
+               )
+             )
+           )
            .then(console.log(musicList));
        }
 

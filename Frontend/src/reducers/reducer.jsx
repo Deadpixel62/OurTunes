@@ -1,7 +1,9 @@
 const initialState = {
     musicList: [],
     inputValue:"",
-    cart:[]
+    cart:[],
+    price: 0,
+    name:"",
 
 }
 
@@ -16,9 +18,25 @@ const Reducer=  (state = initialState, action) => {
       console.log(action.payload);
       return { ...state, musicList: action.payload };
 
-       case "AddToCart":
-                return {...state, 
-                cart : [...state.cart, state.musicList.find(product => product.id === action.payload.id)]}
+    case "AddToCart":
+      state.price = state.price + action.payload.price;
+      return {
+        ...state,
+        cart: [
+          ...state.cart,
+          state.musicList.find((product) => product.id === action.payload.id),
+        ],
+      };
+
+    case "CheckoutSet":
+      return {
+        ...state,
+        cart: [],
+        price: 0,
+      };
+
+    case "setName":
+      return { ...state, name: action.payload };
 
     default:
       return state;
