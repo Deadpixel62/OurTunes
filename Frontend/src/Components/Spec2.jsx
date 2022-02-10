@@ -73,7 +73,7 @@ const dispatch = useDispatch();
            style={{ width: 300, margin: 10 }}
            cover={
              <img
-               style={{ height: "200px" }}
+               style={{ height: "200px"  }}
                alt={card.kind}
                src={card.artworkUrl100}
              />
