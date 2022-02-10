@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import Navbar from './Components/Navbar'
 import Spec2 from './Components/Spec2.jsx'
 import Checkout from './Components/Checkout'
+import ProcessedCheckout from './Components/ProcessedCheckout'
 import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -14,10 +15,11 @@ const dispatch = useDispatch();
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Spec2 />} />
         <Route path="/Checkout" element={<Checkout />} />
+        <Route path="/transactionCompleted" element={<ProcessedCheckout />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,4 @@
 import React from "react";
-import "./navbar.css";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { CheckoutSet, setName } from "../actions";
@@ -64,7 +62,7 @@ function Checkout() {
               e.preventDefault();
               console.log("Checkout confirmed");
               dispatch(CheckoutSet());
-              navigate('/')
+              navigate("/transactionCompleted");
             }}
           >
             <input
