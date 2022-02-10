@@ -8,7 +8,7 @@ import imgCart from './images/icons8-shopping-cart-50.png'
 import {useState} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {setInputValue} from '../actions';
-import { Routes, Route, Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 
 function Navbar() {

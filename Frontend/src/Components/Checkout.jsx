@@ -1,13 +1,17 @@
 import React from "react";
 import "./navbar.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { CheckoutSet, setName } from "../actions";
+import {Link } from "react-router-dom";
+
 
 function Checkout() {
     const cart = useSelector((state) => state.cart);
     const totalPrice = useSelector((state) => state.price);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
 
@@ -59,7 +63,8 @@ function Checkout() {
             onSubmit={(e) => {
               e.preventDefault();
               console.log("Checkout confirmed");
-              dispatch(Checkout())
+              dispatch(CheckoutSet());
+              navigate('/')
             }}
           >
             <input
@@ -67,14 +72,21 @@ function Checkout() {
               type="text"
               onChange={(e) => dispatch(setName(e.target.value))}
               placeholder="Name"
+              required
             />
-            
-            <input className="formInput" type="text" placeholder="Address" />
-            <button  className="formBtn" type="submit"> Confirm checkout </button>
+
+            <input required className="formInput" type="text" placeholder="Address" />
+            <button className="formBtn" type="submit">
+              {" "}
+              Confirm checkout{" "}
+            </button>
           </form>
         </div>
       ) : (
-        <p>Your Cart is empty..</p>
+        <p>
+          Your cart is empty... <br/>
+          <Link to="/">Home</Link>
+        </p>
       )}
     </div>
   );
