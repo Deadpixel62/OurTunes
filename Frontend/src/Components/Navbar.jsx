@@ -61,7 +61,7 @@ function Navbar() {
         <button onClick={() => setVisible(true)} className="cart">
           {" "}
           <img src={imgCart} />
-          {cartNum > 0 ? <span>{cartNum}</span> : ""}
+          {cartNum > 0 ? <span style={{backgroundColor:"#FF5C8D", padding:"0 4px" , borderRadius:"16px"}}>{cartNum}</span> : ""}
         </button>
       </nav>
 

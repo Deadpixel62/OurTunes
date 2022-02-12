@@ -56,6 +56,10 @@ nav button{
 
 .cart{
     margin-left:auto;
+    transition: all .3s;
+}
+.cart:hover{
+    transform: scale(1.05);
 }
 
 .deleteInput{
