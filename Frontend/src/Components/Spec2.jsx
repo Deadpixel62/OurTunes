@@ -33,7 +33,7 @@ const dispatch = useDispatch();
              dispatch(
                setMusicList(
                  res.data.feed.results.map((object) => {
-                   return { ...object, price: 120 };
+                   return { ...object, price: 120, isInCart: false };
                  })
                )
              )
@@ -80,7 +80,7 @@ const dispatch = useDispatch();
            }
            actions={[
              <HeartOutlined  key="like" />,
-             <ShoppingCartOutlined onClick={(e) => {e.stopPropagation(); cart.filter((item) => item.id === card.id).length === 0
+             <ShoppingCartOutlined style={card.isInCart ? { fontSize: '16px', color: 'green' } :{} } onClick={(e) => {e.stopPropagation(); cart.filter((item) => item.id === card.id).length === 0
                ? dispatch(AddToCart(card))
                : alert("Song already in Cart.");}} key="addToCart" />
            ]}

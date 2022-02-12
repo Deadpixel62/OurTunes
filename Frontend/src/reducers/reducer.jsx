@@ -19,7 +19,8 @@ const Reducer=  (state = initialState, action) => {
       return { ...state, musicList: action.payload };
 
     case "AddToCart":
-      state.price = state.price + action.payload.price;
+      state.price += action.payload.price;
+      action.payload.isInCart= true;
       return {
         ...state,
         cart: [
@@ -29,6 +30,7 @@ const Reducer=  (state = initialState, action) => {
       };
 
     case "CheckoutSet":
+      state.cart.map((product) => product.isInCart = false);
       return {
         ...state,
         cart: [],
