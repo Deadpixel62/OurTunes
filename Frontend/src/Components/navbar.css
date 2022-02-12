@@ -23,6 +23,9 @@ nav{
     gap:1rem;
     padding:1rem 10vw ;
     margin-bottom: 10vh;
+    position:sticky;
+    top:0;
+    z-index: 1;
 
     
 }

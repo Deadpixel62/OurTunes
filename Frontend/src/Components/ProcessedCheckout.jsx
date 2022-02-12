@@ -9,9 +9,9 @@ function ProcessedCheckout() {
 
 
   return (
-    <div>
-      <h2>Thank you for your purchase, {name} .</h2>
-      <Link onClick={()=> dispatch(setName(""))} className="homeBtn" to="/">
+    <div className="processedCheckout">
+      <h2>Thank you for your purchase, {name}.</h2>
+      <Link  onClick={()=> dispatch(setName(""))} className="homeBtn" to="/">
         Home
       </Link>
     </div>
