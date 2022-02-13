@@ -40,6 +40,10 @@ const Reducer=  (state = initialState, action) => {
     case "setName":
       return { ...state, name: action.payload };
 
+    case "deleteFromCart":
+      console.log(action.payload)
+      return {...state, cart: state.cart.filter((item) => item.id != action.payload.id)}  
+
     default:
       return state;
   }

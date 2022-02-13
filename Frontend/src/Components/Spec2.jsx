@@ -3,7 +3,6 @@ import "./antd.css"
 import './spec2.css'
 import {Card, Avatar, Row } from "antd";
 import {
-  EditOutlined,
   ShoppingCartOutlined,
   HeartOutlined,
 } from "@ant-design/icons";

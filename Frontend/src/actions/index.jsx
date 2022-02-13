@@ -32,3 +32,10 @@ export const setName = (input) => {
         payload: input
     }
 }
+
+export const deleteFromCart = (item) => {
+  return {
+    type: "deleteFromCart",
+    payload: item
+  };
+}

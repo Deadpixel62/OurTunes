@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { CheckoutSet, setName } from "../actions";
+import { CheckoutSet, setName, deleteFromCart } from "../actions";
+import { DeleteOutlined } from "@ant-design/icons";
 import {Link } from "react-router-dom";
 
 
@@ -23,7 +24,8 @@ function Checkout() {
               display: "flex",
               flexDirection: "column",
               gap: "20px",
-              alignItems: "flex-start",
+              alignItems: "center",
+              gap: "25px",
             }}
           >
             {cart.map((item) => {
@@ -41,8 +43,7 @@ function Checkout() {
                       display: "flex",
                       gap: "15px",
                       alignItems: "center",
-                      width:"30vw",
-                      marginLeft:"15vw"
+                      width: "30vw",
                     }}
                   >
                     <img
@@ -51,8 +52,22 @@ function Checkout() {
                     />
                     <span>{item.name}</span>
                   </span>
-                  <span style={{ width: "15vw" , marginRight:"10vw"}}>{item.artistName}</span>
+                  <span style={{ width: "15vw", marginRight: "10vw" }}>
+                    {item.artistName}
+                  </span>
                   <span>{item.price} DZD</span>
+
+                  <DeleteOutlined
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      dispatch(deleteFromCart(item));
+                    }}
+                    style={{
+                      color: "red",
+                      fontSize: "18px",
+                      marginLeft: "6vw",
+                    }}
+                  />
                 </li>
               );
             })}
@@ -75,7 +90,12 @@ function Checkout() {
               required
             />
 
-            <input required className="formInput" type="text" placeholder="Address" />
+            <input
+              required
+              className="formInput"
+              type="text"
+              placeholder="Address"
+            />
             <button className="formBtn" type="submit">
               {" "}
               Confirm checkout{" "}
@@ -84,7 +104,7 @@ function Checkout() {
         </div>
       ) : (
         <p>
-          Your cart is empty... <br/>
+          Your cart is empty... <br />
           <Link to="/">Home</Link>
         </p>
       )}
