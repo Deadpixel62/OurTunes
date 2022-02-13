@@ -61,7 +61,7 @@ const dispatch = useDispatch();
 
   return (
       
-    <Row style={{justifyContent:"center"}}  gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+    <Row style={{justifyContent:"center", gap: "6vh"}}  gutter={{ xs: 8 }}>
 
    {filteredData.map((card)=> {
        return (
@@ -70,7 +70,7 @@ const dispatch = useDispatch();
            className="gutter-row "
            span={6}
            key={card.id}
-           style={{ width: 300, margin: 10 }}
+           style={{ width: 300}}
            cover={
              <img
                style={{ height: "200px"  }}
