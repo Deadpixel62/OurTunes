@@ -41,9 +41,13 @@ const Reducer = (state = initialState, action) => {
     case "CheckoutSet":
       state.cart.map((product) => (product.isInCart = false));
       localStorage.removeItem("cart");
-      localStorage.setItem(
+       localStorage.setItem(
         "products",
-        JSON.stringify(state.musicList.map((obj) => (obj.isInCart = false)))
+        JSON.stringify(
+          state.musicList.map((obj) => {
+            return { ...obj, isInCart: false };
+          })
+        )
       );
       return {
         ...state,
