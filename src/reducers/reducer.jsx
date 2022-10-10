@@ -52,6 +52,9 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [],
+        musicList: state.musicList.map((obj) => {
+          return { ...obj, isInCart: false };
+        }),
         price: 0,
       };
 
