@@ -27,7 +27,7 @@ function Spec2() {
       if (!localStorage.getItem("products") && !musicList.length) {
         axios
           .get(
-            "https://rss.applemarketingtools.com/api/v2/fr/music/most-played/25/songs.json"
+            "https://rss.applemarketingtools.com/api/v2/us/music/most-played/27/songs.json"
           )
           .then((res) =>
             dispatch(
